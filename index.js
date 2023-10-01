@@ -8,7 +8,7 @@ const encoder = bodyParser.urlencoded();
 // const session = require('express-session');
 // STATIC 
 app.use(express.static(path.join(__dirname, 'public')));
-// app.use(express.static(path.join(__dirname, '..', 'public')));
+// app.use(express.static(path.join(__dirname,  'public')));
 
 // SESSION CREATION
 // app.use(session({
@@ -45,13 +45,13 @@ app.get('/register', (req, res) => {
 
 // DASHBOARD PAGE
 app.get('/dashboard',(req,res)=>{
-  const filePath = path.join(__dirname,'..','public','dashboard.html');
+  const filePath = path.join(__dirname,'public','dashboard.html');
   res.sendFile(filePath);
 });
 
 //  TOPUP PAGE
 app.get('/topup',(req,res)=>{
-  const filePath = path.join(__dirname,'..','public','topup.html');
+  const filePath = path.join(__dirname,'public','topup.html');
   res.sendFile(filePath);
 });
 
