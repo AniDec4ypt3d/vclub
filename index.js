@@ -8,6 +8,7 @@ const encoder = bodyParser.urlencoded();
 // const session = require('express-session');
 // STATIC 
 app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, '..', 'public')));
 
 // SESSION CREATION
 // app.use(session({
@@ -18,27 +19,27 @@ app.use(express.static(path.join(__dirname, 'public')));
 // LOGIN BUTTON 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/', (req, res) => {
-  const filePath = path.join(__dirname, '..', 'public', 'index.html');
+  const filePath = path.join(__dirname,  'public', 'index.html');
   res.render(filePath);
 });
 
 // VERIFY OR LOGO PAGE
 app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/verify', (req, res) => {
-  const filePath = path.join(__dirname, '..', 'public', 'verify.html');
+  const filePath = path.join(__dirname,  'public', 'verify.html');
   res.sendFile(filePath);
 });
 
 
 // LOGIN PAGE
 app.get('/login', (req, res) => {
-  const filePath = path.join(__dirname, '..', 'public', 'login.html');
+  const filePath = path.join(__dirname,  'public', 'login.html');
   res.sendFile(filePath);
 });
 
 // RAGISTER PAGE
 app.get('/register', (req, res) => {
-  const filePath = path.join(__dirname, '..', 'public', 'register.html');
+  const filePath = path.join(__dirname,  'public', 'register.html');
   res.sendFile(filePath);
 });
 
