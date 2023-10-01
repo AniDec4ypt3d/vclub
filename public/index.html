@@ -1,0 +1,19 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <button id="loginButton">LOGIN</button>
+    
+</body>
+<script>
+    function redirectToLoginPage() {
+            // Replace 'target_page.html' with the URL of the page you want to redirect to
+            window.location.href = '/verify';
+        }
+
+        // Add a click event listener to the button
+        document.getElementById('loginButton').addEventListener('click', redirectToLoginPage);
+</script>
+</html>

@@ -1,0 +1,65 @@
+$(document).ready(function() {
+    $(function () {
+            
+            $.getJSON("/usercp/main/getStats", function(json) {
+                var chart;
+                var stats = {};
+                var options = {};
+                stats.dumps = json.dumps
+                stats.ccs   = json.ccs
+                stats.accs  = json.accs
+                
+                options =  {
+                    chart: {
+                        renderTo: 'container',
+                        type: 'spline'
+                    },
+                    title: {
+                        text: 'Current month Averages Purchases'
+                    },
+                    subtitle: {
+                        text: 'Source: Dumps/CCS/Accounts'
+                    },
+                    xAxis: {
+                        min:0,
+                        tickInterval:1,
+                        title: {
+                            text: 'All period'
+                        },
+                        categories: json.days
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'Quantity (pcs)'
+                        }
+                    },
+                    exporting: {
+                        enabled: false
+                    },
+                    tooltip: {
+                        enabled: true,
+                        formatter: function() {
+                            return this.y + 'pcs';
+                        }
+                    },
+                    plotOptions: {
+                        line: {
+                            dataLabels: {
+                                enabled: true
+                            },
+                            enableMouseTracking: true
+                        }
+                    },
+                    series: [
+                        { name: 'CCS', data: stats.ccs},
+                        { name: 'Dumps', data: stats.dumps},
+                        { name: 'Accs', data: stats.accs}
+                    ]
+                }
+                chart = new Highcharts.Chart(options);
+            });
+           
+           
+        });
+});
+

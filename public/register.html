@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/newlogon2.css">
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/css/jquery-ui-1.10.0.custom.min.css">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="/css/font-awesome.min(1).css">
+<script type="text/javascript" src="/css/jquery.min.js.download"></script>
+<script type="text/javascript" src="/css/bootstrap.bundle.min.js.download"></script>
+<script type="text/javascript" src="/css/jquery-ui-1.10.0.custom.min.js.download"></script>
+<script type="text/javascript" src="/css/jquery.noty.js.download"></script>
+<script type="text/javascript" src="/css/center.js.download"></script>
+<script type="text/javascript" src="/css/bottomRight.js.download"></script>
+<script type="text/javascript" src="/css/default.js.download"></script>
+<script type="text/javascript" src="/css/core.js.download"></script>
+<script type="text/javascript" src="/css/bootstrap-datepicker.js.download"></script>
+<title>VClub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="onion-location" content="http://vclubccvd426icndg43sjpaowcdkiatcmdfj3zw4mc2z6zwbhvecwmyd.onion">
+        
+    </head>
+<body class="text-center">
+<style>
+    html {
+        background-color: #000;
+        height: 100%;
+    }
+
+    body,
+    body>div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+<div class="container">
+    <div class="row">
+    <div class="col align-self-center">
+        <div class="text registration" style="margin-bottom:20px;">
+            Registration: <strong>Open</strong>, Registration Fee:
+            <strong>$50</strong><br>
+            <span style="color:red;">Please Note Inactive users Without Balance will be deleted Weekly</span>
+        </div>
+
+        <div class="form">
+            <form id="yw0" action="/register" method="post">
+<input type="hidden" value="bm9sNTgyZWZxfkp4QjI3dDdDQTlFYnNPWXRxbjNFN3J_XIw88512JphKElNnLSIa5T5QPQISPqvRRtPqzpbEpQ==" name="YII_CSRF_TOKEN">                            <div style="width:453px;">
+                    <div class="control-group-inline">
+                        <div class="form-group"><label class="control-label required" for="P_SignInForm_username">Username <span class="required">*</span></label><div class="controls"><input id="inputUsername" class="form-control" placeholder="Username*" name="P_SignInForm[username]" type="text"></div></div>                        <div class="form-group"><label class="control-label required" for="P_SignInForm_jabber">Jabber <span class="required">*</span></label><div class="controls"><input id="inputEmail" class="form-control" placeholder="Jabber*" style="margin-left:15px;" name="P_SignInForm[jabber]" type="text"></div></div>                    </div>
+                    <div class="control-group-inline">
+                        <div class="form-group"><label class="control-label required" for="P_SignInForm_password">Password <span class="required">*</span></label><div class="controls"><input id="inputPassword" class="form-control" placeholder="Password*" name="P_SignInForm[password]" type="password" maxlength="64"></div></div>                        <div class="form-group"><label class="control-label required" for="P_SignInForm_password2">Repeat password <span class="required">*</span></label><div class="controls"><input id="inputPassword2" class="form-control" placeholder="Re-Password*" style="margin-left:15px;" name="P_SignInForm[password2]" type="password"></div></div>                    </div>
+                                        <div class="control-group-inline">
+                        <div class="form-group"><label class="control-label required" for="P_SignInForm_verifyCode">Captcha <span class="required">*</span></label><div class="controls"><input id="inputCaptcha" autocomplete="off" class="form-control half" placeholder="Captcha*" name="P_SignInForm[verifyCode]" type="text"><div class="captcha" id="captcha"><img id="yw1" src="/css/captcha" alt=""></div></div></div>                        
+                        <div style="display:inline-block; float:right;"><div class="form-actions"><button class="green btn btn-secondary" style="margin-right:3px; width:210px; float:right;" type="submit" name="yt0">Register</button></div></div>
+                        <script>$(function () {
+                                $('#captcha').insertAfter('#inputCaptcha');
+                            });</script>
+                    </div>
+                    <div class="col-lg-8">
+                        You can get <span style="color:red">invitation code</span> and news using our telegram bot:
+                        <a href="https://t.me/Unitedshops_bot" target="_blank">
+                            <img src="/css/VClub_files/telegram.svg" width="32" height="32" alt="Telegram logo">
+                            @Unitedshops_bot</a>. Go to bot in telegram, click on <span class="badge badge-primary">/start</span> button and enter command <span class="badge badge-primary">/invite</span>
+                    </div>
+                    
+                </div>
+                        </form>
+        </div>
+    </div>
+</div>
+</div>
+<script>
+    //AJAX_POINTER
+    var ajaxNoty;
+    var ajaxError = 'Error while processing your request.'
+
+    //NOTIFY:
+    function myNotify(text, type, timeout) {
+        timeout = (!timeout) ? false : timeout * 1000;
+        return noty({
+            text: text,
+            type: type,
+            dismissQueue: true,
+            layout: 'bottomRight',
+            theme: 'default',
+            timeout: timeout,
+            template: '<div class="noty_message"><span class="noty_text"></span><div class="noty_close"></div></div>',
+            animation: {
+                open: {height: 'toggle'},
+                close: {height: 'toggle'},
+                easing: 'swing',
+                speed: 0 // opening & closing animation speed
+            }
+        });
+    }
+
+    function confirmAction(text) {
+        return noty({
+            text: text,
+            type: "confirm",
+            dismissQueue: true,
+            layout: 'center',
+            theme: 'default',
+            timeout: 0,
+            template: '<div class="noty_message"><span class="noty_text"></span><div class="noty_close"></div></div>',
+            buttons: [
+                {
+                    addClass: 'btn btn-primary', text: 'Ok', onClick: function ($noty) {
+                        return true;
+
+                    }
+                },
+                {
+                    addClass: 'btn btn-danger', text: 'Cancel', onClick: function ($noty) {
+                        return false;
+                    }
+                }
+            ]
+        });
+    }
+</script>
+<script type="text/javascript">
+/*<![CDATA[*/
+jQuery(function($) {
+
+jQuery(document).on('click', '#yw1', function(){
+	jQuery.ajax({
+		url: "\/usercp\/auth\/captcha?refresh=1",
+		dataType: 'json',
+		cache: false,
+		success: function(data) {
+			jQuery('#yw1').attr('src', data['url']);
+			jQuery('body').data('captcha.hash', [data['hash1'], data['hash2']]);
+		}
+	});
+	return false;
+});
+
+});
+/*]]>*/
+</script>
+
+</body></html>

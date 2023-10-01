@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VClub</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Add a meta refresh tag with the desired timeout in seconds -->
+    <meta http-equiv="refresh" content="10;url=/login">
+</head>
+<body>
+    <div class="container">
+        <a href="/login">
+            <img src="/images/logo.svg" alt="LOGIN" style="width: 40vw; border: none;">
+        </a>
+    </div>
+    <style>
+        html {
+            background-color: #000;
+            height: 100%;
+        }
+
+        body,
+        body>div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            overflow:hidden;
+        }
+    </style>
+    <script>
+        //AJAX_POINTER
+        var ajaxNoty;
+        var ajaxError = 'Error while processing your request.'
+
+        //NOTIFY:
+        function myNotify(text, type, timeout) {
+            timeout = (!timeout) ? false : timeout * 1000;
+            return noty({
+                text: text,
+                type: type,
+                dismissQueue: true,
+                layout: 'bottomRight',
+                theme: 'default',
+                timeout: timeout,
+                template: '<div class="noty_message"><span class="noty_text"></span><div class="noty_close"></div></div>',
+                animation: {
+                    open: {height: 'toggle'},
+                    close: {height: 'toggle'},
+                    easing: 'swing',
+                    speed: 0 // opening & closing animation speed
+                }
+            });
+        }
+
+        function confirmAction(text) {
+            return noty({
+                text: text,
+                type: "confirm",
+                dismissQueue: true,
+                layout: 'center',
+                theme: 'default',
+                timeout: 0,
+                template: '<div class="noty_message"><span class="noty_text"></span><div class="noty_close"></div></div>',
+                buttons: [
+                    {
+                        addClass: 'btn btn-primary', text: 'Ok', onClick: function ($noty) {
+                            return true;
+                        }
+                    },
+                    {
+                        addClass: 'btn btn-danger', text: 'Cancel', onClick: function ($noty) {
+                            return false;
+                        }
+                    }
+                ]
+            });
+        }
+    </script>
+</body>
+</html>

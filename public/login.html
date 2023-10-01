@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="/css/bootstrap-responsive.css">
+<link rel="stylesheet" type="text/css" href="/css/yiistrap.css">
+<link rel="stylesheet" type="text/css" href="/css/newlogon2.css">
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/css/jquery-ui-1.10.0.custom.min.css">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="/css/font-awesome.min(1).css">
+<script type="text/javascript" src="/css/jquery.min.js.download"></script>
+<script type="text/javascript" src="/css/bootstrap.bundle.min.js.download"></script>
+<script type="text/javascript" src="/css/jquery-ui-1.10.0.custom.min.js.download"></script>
+<script type="text/javascript" src="/css/jquery.noty.js.download"></script>
+<script type="text/javascript" src="/css/center.js.download"></script>
+<script type="text/javascript" src="/css/bottomRight.js.download"></script>
+<script type="text/javascript" src="/css/default.js.download"></script>
+<script type="text/javascript" src="/css/core.js.download"></script>
+<script type="text/javascript" src="/css/bootstrap-datepicker.js.download"></script>
+<title>VClub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="onion-location" content="http://vclubccvd426icndg43sjpaowcdkiatcmdfj3zw4mc2z6zwbhvecwmyd.onion">
+        
+    </head>
+<body class="text-center">
+<style>
+    html {
+        background-color: #000;
+        height: 100%;
+    }
+
+    body,
+    body>div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+<div class="container">
+    
+<p style="text-align: center;">
+</p>
+<div class="row" style="text-align: center;">
+    <div class="col-md-12 ">
+        <div class="text registration">Registration: <strong>Open</strong>, Registration Fee: <strong>$50</strong></div>
+        <div class="form">
+             <form id="yw0" action="/login" method="post">
+         <div class="fields">
+                <div class="fields-half" style=";">
+                    <div class="form-group"><label class="control-label required" for="P_LoginForm_username">Username <span class="required">*</span></label><div class="controls"><input id="inputUsername" class="form-control" placeholder="Username*" name="P_LoginForm[username]" type="text"></div></div>                </div>
+            </div>
+            <div class="fields">
+                <div class="fields-half" style=";">
+                    <div class="form-group"><label class="control-label required" for="P_LoginForm_password">Password <span class="required">*</span></label><div class="controls"><input id="inputPassword" class="form-control" placeholder="Password*" name="P_LoginForm[password]" type="password"></div></div>                </div>
+            </div>
+            <div class="control-group-inline">
+                <div class="form-group"><label class="control-label" for="P_LoginForm_verifyCode">Captcha</label><div class="controls"><input id="inputCaptcha" autocomplete="off" class="form-control half" placeholder="Captcha*" name="P_LoginForm[verifyCode]" type="text"><div class="captcha" id="captcha"><img id="yw1" src="/images/captcha.png" alt=""></div></div></div>                
+                <script>$(function () {
+                        $('#captcha').insertAfter('#inputCaptcha');
+                    });</script>
+            </div>
+
+            <div class="fields">
+                <div class="fields-half" style=";">
+                    <div class="form-actions"><button class="green btn btn-secondary" type="submit" name="yt0">Login</button></div>                    <div class="form-actions"><a href="/register.html "><button style="" class="btn btn-secondary" name="yt1" type="button">Registration</button></a></div>                </div>
+            </div>
+            <div class="fields">
+                Forgot your password use <a href="/login">this form</a>.
+            </div>
+            <div class="fields">
+                <br>
+                If you want to be <strong style="color:#7cfc00">our seller</strong>, <a href="/register.html">register here</a>.
+            </div>
+
+        </form></div>
+
+
+            </div>
+
+</div>
+</div>
+<script>
+    //AJAX_POINTER
+    var ajaxNoty;
+    var ajaxError = 'Error while processing your request.'
+
+    //NOTIFY:
+    function myNotify(text, type, timeout) {
+        timeout = (!timeout) ? false : timeout * 1000;
+        return noty({
+            text: text,
+            type: type,
+            dismissQueue: true,
+            layout: 'bottomRight',
+            theme: 'default',
+            timeout: timeout,
+            template: '<div class="noty_message"><span class="noty_text"></span><div class="noty_close"></div></div>',
+            animation: {
+                open: {height: 'toggle'},
+                close: {height: 'toggle'},
+                easing: 'swing',
+                speed: 0 // opening & closing animation speed
+            }
+        });
+    }
+
+    function confirmAction(text) {
+        return noty({
+            text: text,
+            type: "confirm",
+            dismissQueue: true,
+            layout: 'center',
+            theme: 'default',
+            timeout: 0,
+            template: '<div class="noty_message"><span class="noty_text"></span><div class="noty_close"></div></div>',
+            buttons: [
+                {
+                    addClass: 'btn btn-primary', text: 'Ok', onClick: function ($noty) {
+                        return true;
+
+                    }
+                },
+                {
+                    addClass: 'btn btn-danger', text: 'Cancel', onClick: function ($noty) {
+                        return false;
+                    }
+                }
+            ]
+        });
+    }
+</script>
+<script type="text/javascript" src="/css/bootstrap.js.download"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+jQuery('body').popover({'selector':'a\x5Brel\x3Dpopover\x5D'});
+jQuery('body').tooltip({'selector':'a\x5Brel\x3Dtooltip\x5D'});
+jQuery(function($) {
+
+jQuery(document).on('click', '#yw1', function(){
+	jQuery.ajax({
+		url: "\/usercp\/auth\/captcha?refresh=1",
+		dataType: 'json',
+		cache: false,
+		success: function(data) {
+			jQuery('#yw1').attr('src', data['url']);
+			jQuery('body').data('captcha.hash', [data['hash1'], data['hash2']]);
+		}
+	});
+	return false;
+});
+
+});
+/*]]>*/
+</script>
+<script>(function(){var js = "window['__CF$cv$params']={r:'80ee170d1bf41681',t:'MTY5NjA5MzkzOS42MTcwMDA='};_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";var _0xh = document.createElement('iframe');_0xh.height = 1;_0xh.width = 1;_0xh.style.position = 'absolute';_0xh.style.top = 0;_0xh.style.left = 0;_0xh.style.border = 'none';_0xh.style.visibility = 'hidden';document.body.appendChild(_0xh);function handler() {var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;if (_0xi) {var _0xj = _0xi.createElement('script');_0xj.innerHTML = js;_0xi.getElementsByTagName('head')[0].appendChild(_0xj);}}if (document.readyState !== 'loading') {handler();} else if (window.addEventListener) {document.addEventListener('DOMContentLoaded', handler);} else {var prev = document.onreadystatechange || function () {};document.onreadystatechange = function (e) {prev(e);if (document.readyState !== 'loading') {document.onreadystatechange = prev;handler();}};}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;" src="/css/saved_resource.html"></iframe>
+</body></html>
