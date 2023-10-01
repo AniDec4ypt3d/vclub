@@ -7,7 +7,7 @@ const app = express();
 const encoder = bodyParser.urlencoded();
 // const session = require('express-session');
 // STATIC 
-app.use(express.static(path.join(__dirname, '..', 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // SESSION CREATION
 // app.use(session({
